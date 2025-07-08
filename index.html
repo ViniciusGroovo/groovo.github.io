@@ -31,62 +31,68 @@
     header {
       background: var(--primary);
       color: var(--text);
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     header img {
       display: block;
       margin: 0 auto 1rem;
-      height: 120px;
+      height: 100px;
+      max-width: 80%;
     }
 
     .hero {
-      padding: 4rem 2rem;
+      padding: 3rem 1rem;
       text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .hero h2 {
-      font-size: 2rem;
+      font-size: 1.75rem;
       color: var(--primary);
       margin-bottom: 1rem;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       max-width: 600px;
       margin: 0 auto 2rem;
       color: white;
     }
 
     .countdown {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: bold;
       color: var(--text);
       background: #e5f6f5;
       display: inline-block;
-      padding: 1rem 2rem;
+      padding: 0.8rem 1.5rem;
       border-radius: 10px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: 1fr;
       gap: 2rem;
-      padding: 3rem 2rem;
+      padding: 2rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .feature {
       background: white;
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
     }
 
     .feature h3 {
-      color: var(--title);
+      color: var(--text);
       margin-bottom: 0.5rem;
     }
 
@@ -101,13 +107,37 @@
       font-size: 0.9rem;
       opacity: 0.8;
     }
+
+    /* RESPONSIVIDADE */
+    @media (min-width: 600px) {
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .features {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .countdown {
+        font-size: 1.4rem;
+      }
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <img src="groovo.png"_
-alt="Groovo Logo">
+    <img src="groovo.png" alt="Groovo Logo">
     <p>Educação que impulsiona resultados.</p>
   </header>
 
@@ -142,7 +172,7 @@ alt="Groovo Logo">
 
   <script>
     const countdownElement = document.getElementById('countdown');
-    const targetDate = new Date("2025-08-03T14:00:00").getTime();
+    const targetDate = new Date("2025-09-14T14:00:00").getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
